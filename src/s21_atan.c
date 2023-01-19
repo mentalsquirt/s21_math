@@ -1,5 +1,4 @@
 #include "s21_math.h"
-#include <stdio.h>
 
 #define ACCURACY 0.28
 
