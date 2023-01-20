@@ -3,7 +3,7 @@ NAME=s21_math
 CC=gcc
 CFLAGS=-Wall -Werror -Wextra -pedantic
 
-SRCS=s21_acos.c s21_asin.c s21_atan.c s21_cos.c s21_sin.c s21_tan.c s21_convert.c s21_fabs.c 
+SRCS=s21_acos.c s21_asin.c s21_atan.c s21_cos.c s21_sin.c s21_tan.c s21_fabs.c 
 OBJS=$(SRCS:.c=.o)
 
 EXIT_PATH=./
