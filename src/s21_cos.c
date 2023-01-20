@@ -1,5 +1,5 @@
 #include "s21_math.h"
-#define ACCURACY 10000
+#define ACCURACY 100000
 
 long double s21_cos(double x) {
   double result = 1, term = 1;

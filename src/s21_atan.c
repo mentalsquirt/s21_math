@@ -1,17 +1,22 @@
 #include "s21_math.h"
-
-#define ACCURACY 0.28
+#define ACCURACY 100000
 
 long double s21_atan(double x) {
-  long double result, abs_x;
-  abs_x = s21_fabs(x);
-  if(abs_x < 1) {
-    result = x / (1 + ACCURACY * x * x);
+  double res;
+  if (x > 1) {
+    res = S21_PI - s21_atan(1 / x);
+  } else if (x < -1) {
+    res = -S21_PI + s21_atan(1 / x);
   } else {
-    result = S21_PI / 2 - x / (x * x + ACCURACY);
+    double x2 = x * x;
+    res = x;
+    double term = x;
+    int i = 3;
+    for (int j = 0; j < ACCURACY; j++) {
+      term *= -x2 * (i - 2) / i;
+      res += term;
+      i += 2;
+    }
   }
-  if (x < 0) {
-    result *= -1;
-  }
-  return result;
-}  // atan(x) = atan(y) + atan((x-y)/(1+xy))
+  return res;
+}  // Taylor series expansion

@@ -16,12 +16,16 @@ $(NAME): $(OBJS)
 %.o: %.c s21_math.h
 		$(CC) $(CFLAGS) -c $< -o $@
 
+test: $(OBJS) $(SRCS) s21_math.h
+		$(CC) $(CFLAGS) trigonometry_tests.c $(OBJS) -o $(EXIT_PATH)$@
+		$(EXIT_PATH)$@
+
 clean:
 		rm -f $(OBJS)
 
 fclean:
 		make clean
-		rm -rf $(NAME) $(NAME).dSYM
+		rm -rf $(NAME) $(NAME).dSYM test
 
 re:
 		make fclean
