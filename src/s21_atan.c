@@ -4,9 +4,9 @@
 long double s21_atan(double x) {
   double res;
   if (x > 1) {
-    res = S21_PI - s21_atan(1 / x);
+    res = S21_PI / 2 - s21_atan(1 / x);
   } else if (x < -1) {
-    res = -S21_PI + s21_atan(1 / x);
+    res = -S21_PI / 2 + s21_atan(1 / x);
   } else {
     double x2 = x * x;
     res = x;

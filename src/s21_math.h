@@ -4,6 +4,11 @@
 #define S21_PI 3.14159265358979323846
 #define S21_EPS 1e-17
 #define S21_NAN 0.0 / 0.0
+#define EPSILON 0.00001
+
+#ifdef DEBUG
+#include <math.h>
+#endif  // DEBUG
 
 long double s21_fabs(double x);
 
